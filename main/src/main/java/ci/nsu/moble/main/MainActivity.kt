@@ -54,8 +54,8 @@ fun Main() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
+            .padding(25.dp),
+        verticalArrangement = Arrangement.spacedBy(20.dp)
     ) {
 
         OutlinedTextField(
@@ -71,6 +71,7 @@ fun Main() {
                 val found = colorsMap[key]
                 if (found != null) {
                     buttonColor = found
+                    Log.i("task2","Цвет изменен на \"${inputText.trim().lowercase()}\"")
                 } else {
                     Log.i("Task2", "Пользовательский цвет \"$inputText\" не найден")
                 }
@@ -92,8 +93,8 @@ fun Main() {
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(56.dp)
-                        .background(item.color, RoundedCornerShape(12.dp))
-                        .padding(horizontal = 16.dp),
+                        .background(item.color, RoundedCornerShape(15.dp))
+                        .padding(horizontal = 25.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(item.name, color = Color.White)
