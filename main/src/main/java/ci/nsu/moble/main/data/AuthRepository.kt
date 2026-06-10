@@ -16,6 +16,7 @@ class AuthRepository(
             if (response.isSuccessful) {
                 val body = response.body()
                 TokenManager.token = body?.token
+                TokenManager.userId = body?.user?.userId?.toLong() ?: 0L
                 Result.success(body?.user)
             } else {
                 Result.failure(Exception("Ошибка входа: ${response.code()}"))
